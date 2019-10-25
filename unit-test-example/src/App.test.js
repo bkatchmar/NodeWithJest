@@ -22,5 +22,8 @@ it("Uses render with shallow", () => {
   );
 
   expect(copy.state().firstName).toBe("Brian");
+  expect(copy.find(".text.first").text()).toBe("Brian");
+
   expect(copy.state().lastName).toBe("Katchmar");
+  expect(copy.find(".text.last").text()).toBe("Katchmar");
 });

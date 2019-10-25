@@ -9,3 +9,7 @@ The main component we need is enzyme which helps us with rendering components to
 ```
 npm i --save-dev enzyme enzyme-adapter-react-16
 ```
+
+This uses the Jest `expect()` system for assertion, documentation over this can be found [here](https://jestjs.io/docs/en/expect).
+
+In addition to the result of a component's state or the results of a business logic module, this unit test solution allows us to test individual HTML elements, from how many of an element exists to the text within an element. Documentation for this can be found [here](https://airbnb.io/enzyme/docs/api/ReactWrapper/find.html).

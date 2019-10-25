@@ -13,8 +13,8 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-        <div>{this.state.firstName}</div>
-        <div>{this.state.lastName}</div>
+        <div className="text first">{this.state.firstName}</div>
+        <div className="text last">{this.state.lastName}</div>
       </div>
     );
   }
