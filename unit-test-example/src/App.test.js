@@ -20,5 +20,8 @@ it("Uses render with shallow", () => {
   const copy = shallow(<App />);
 
   expect(copy.state().firstName).toBe("Brian");
-  expect(copy.state().lastName).toBe("Cho");
+  expect(copy.find(".text.first").text()).toBe("Brian");
+
+  expect(copy.state().lastName).toBe("Katchmar");
+  expect(copy.find(".text.last").text()).toBe("Katchmar");
 });
