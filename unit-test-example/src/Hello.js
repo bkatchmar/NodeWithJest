@@ -1,27 +1,31 @@
 import React from "react";
 import SweetAlert from "react-bootstrap-sweetalert";
+import { Button } from "reactstrap";
 
 class Hello extends React.Component {
   state = {
-    success: false
+    success: false,
+    message : ""
   };
 
   hideAlert = () => {
-    this.setState({ success: false });
+    this.setState({ success: false, message : "" });
   };
 
-  sweetAlert = () => {
-    this.setState({ success: true });
+  sweetAlert = (newMessage) => {
+    this.setState({
+      success: true,
+      message : (newMessage) ? newMessage : "Good Job!!!"
+    });
   };
 
   render() {
     return (
       <div>
-        <button className="title" onClick={() => this.sweetAlert()}>
-          Success
-        </button>
+        <div><Button color="primary" onClick={() => this.sweetAlert("You Clicked On Primary")}>Primary</Button></div>
+        <div><Button color="secondary" onClick={() => this.sweetAlert("You Clicked On Secondary")}>Secondary</Button></div>
         {this.state.success === true && (
-          <SweetAlert success title="Good job!" onConfirm={this.hideAlert}>
+          <SweetAlert success title={this.state.message} onConfirm={this.hideAlert}>
             You clicked the button!
           </SweetAlert>
         )}
